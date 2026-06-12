@@ -2,6 +2,7 @@
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Entry
+from .forms import EntryForm
 
 # Create your views here.
 
@@ -22,15 +23,14 @@ class EntryDetailView(LoginRequiredMixin, DetailView):
     def get_queryset(self):
         return Entry.objects.filter(author=self.request.user)
     
-    
+   
     
 class EntryCreateView(LoginRequiredMixin, CreateView):
     model = Entry
+    form_class = EntryForm  # 2. Swap out "fields" for your custom form class
     template_name = 'entries/entry_form.html'
-    fields = ['title', 'content', 'is_vervain_protected', 'danger_level']
     success_url = '/diary/'
 
     def form_valid(self, form):
-        form.instance = form.save(commit=False)
         form.instance.author = self.request.user
         return super().form_valid(form)
