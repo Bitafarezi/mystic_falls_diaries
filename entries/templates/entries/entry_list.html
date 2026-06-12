@@ -1,0 +1,41 @@
+{% extends 'entries/base.html' %}
+
+{% block title %}My Journal Entries - Mystic Falls{% endblock %}
+
+{% block content %}
+<div class="diary-header">
+    <h2>Dear Diary...</h2>
+    <a href="{% url 'entries:entry-create' %}" class="btn-mystic">+ New Entry</a>
+</div>
+
+<div class="entries-list">
+    {% for entry in entries %}
+        <div class="entry-card">
+            <span class="entry-date">{{ entry.created_at|date:"F d, Y – H:i" }}</span>
+            
+            <h3>
+                <a href="{% url 'entries:entry-detail' entry.pk %}" class="entry-title-link">
+                    {{ entry.title }}
+                </a>
+            </h3>
+            
+            <p class="entry-snippet">{{ entry.content|truncatewords:30 }}</p>
+            
+            <div class="entry-meta">
+                <span class="badge danger-level">Threat Level: {{ entry.danger_level }}/5</span>
+                
+                {% if entry.is_vervain_protected %}
+                    <span class="badge vervain-locked">🔒 Vervain Protected</span>
+                {% else %}
+                    <span class="badge exposed">⚠️ Exposed to Compulsion</span>
+                {% endif %}
+            </div>
+        </div>
+    {% empty %}
+        <div class="no-entries">
+            <p>No secrets recorded yet. Has Damon forced you to forget?</p>
+            <a href="{% url 'entries:entry-create' %}" class="btn-mystic">Write Your First Entry</a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
