@@ -1,0 +1,28 @@
+{% extends 'entries/base.html' %}
+
+{% block title %}Join the Supernatural Council - Mystic Falls{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Initiate Your Story</h2>
+    <p class="form-subtitle">Choose your faction carefully. Power comes with a price.</p>
+    
+    <form method="POST">
+        {% csrf_token %}
+        
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <span class="error-text">{{ field.errors.0 }}</span>
+                {% endif %}
+            </div>
+        {% endfor %}
+        
+        <button type="submit" class="btn-mystic save-btn">Cross the Threshold</button>
+    </form>
+    
+    <p class="auth-switch">Already registered? <a href="{% url 'login' %}">Log in here</a>.</p>
+</div>
+{% endblock %}
