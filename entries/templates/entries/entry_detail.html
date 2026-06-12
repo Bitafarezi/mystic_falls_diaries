@@ -1,0 +1,38 @@
+{% extends 'entries/base.html' %}
+
+{% block title %}{{ entry.title }} - Mystic Falls Diaries{% endblock %}
+
+{% block content %}
+<div class="back-navigation">
+    <a href="{% url 'entries:entry-list' %}" class="back-link">← Return to Journal Index</a>
+</div>
+
+<article class="journal-page">
+    <header class="journal-page-header">
+        <span class="journal-date">{{ entry.created_at|date:"l, F d, Y" }}</span>
+        <h2 class="journal-title">"{{ entry.title }}"</h2>
+        <div class="journal-author">Recorded by: <span>{{ entry.author.username }}</span></div>
+    </header>
+
+    <hr class="journal-divider">
+
+    <div class="journal-content">
+        {{ entry.content|linebreaks }}
+    </div>
+
+    <hr class="journal-divider">
+
+    <footer class="journal-page-footer">
+        <div class="security-status">
+            {% if entry.is_vervain_protected %}
+                <span class="status-indicator safe">🔒 Secure: Vervain protection active. Original memories intact.</span>
+            {% else %}
+                <span class="status-indicator danger">⚠️ Vulnerable: No vervain found. Mind vulnerable to Original Vampire compulsion.</span>
+            {% endif %}
+        </div>
+        <div class="threat-status">
+            Threat Level Assessment: <strong>{{ entry.danger_level }} / 5</strong>
+        </div>
+    </footer>
+</article>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'entries/base.html' %}
+
+{% block title %}Write New Secret - Mystic Falls Diaries{% endblock %}
+
+{% block content %}
+<div class="back-navigation">
+    <a href="{% url 'entries:entry-list' %}" class="back-link">← Cancel and Go Back</a>
+</div>
+
+<div class="form-container">
+    <h2>Record Your Confession</h2>
+    <p class="form-subtitle">Make sure nobody is watching over your shoulder...</p>
+    
+    <form method="POST">
+        {% csrf_token %} <!-- Essential security token required by Django -->
+        
+        <div class="form-group">
+            <label for="{{ form.title.id_for_label }}">Entry Title</label>
+            {{ form.title }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.content.id_for_label }}">The Secret Thoughts</label>
+            {{ form.content }}
+        </div>
+
+        <div class="form-row">
+            <div class="form-group half-width">
+                <label for="{{ form.danger_level.id_for_label }}">Supernatural Threat Level</label>
+                {{ form.danger_level }}
+            </div>
+            
+            <div class="form-group half-width checkbox-group">
+                <label for="{{ form.is_vervain_protected.id_for_label }}">
+                    {{ form.is_vervain_protected }}
+                    Inject Vervain Protection
+                </label>
+                <small class="help-text">Check this to keep Damon out of your head.</small>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-mystic save-btn">Lock Into Diary</button>
+    </form>
+</div>
+{% endblock %}
