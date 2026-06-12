@@ -16,9 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth import views as auth_views # Import Django's default login/logout views
+from supernatural_users.views import SignupView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     
     path('diary/', include('entries.urls')),
+    
+    # Authentication Routes
+    path('signup/', SignupView.as_view(), name='signup'),
+    path('login/', auth_views.LoginView.as_view(template_name='supernatural_users/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(next_page='login'), name='logout'),
 ]

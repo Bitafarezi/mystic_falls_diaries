@@ -1,0 +1,28 @@
+{% extends 'entries/base.html' %}
+
+{% block title %}Unlock Diary - Mystic Falls{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Unlock Your Diary</h2>
+    <p class="form-subtitle">Enter your credentials to lift the cloaking spell.</p>
+    
+    <form method="POST">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="id_username">Username</label>
+            <input type="text" name="username" id="id_username" class="form-input" required placeholder="Your alias...">
+        </div>
+        
+        <div class="form-group">
+            <label for="id_password">Password</label>
+            <input type="password" name="password" id="id_password" class="form-input" required placeholder="Your secret phrase...">
+        </div>
+        
+        <button type="submit" class="btn-mystic save-btn">Break the Seal</button>
+    </form>
+    
+    <p class="auth-switch">New to Mystic Falls? <a href="{% url 'signup' %}">Create a profile here</a>.</p>
+</div>
+{% endblock %}

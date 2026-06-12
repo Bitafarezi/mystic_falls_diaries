@@ -315,3 +315,27 @@ nav a:hover {
     font-size: 1.1rem;
     margin-top: 10px;
 }
+
+.auth-switch {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.auth-switch a {
+    color: var(--crimson);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-switch a:hover {
+    color: var(--blood-bright);
+    text-decoration: underline;
+}
+
+.error-text {
+    color: #e57373;
+    font-size: 0.8rem;
+    margin-top: 4px;
+}
