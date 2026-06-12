@@ -1,0 +1,81 @@
+:root {
+    --bg-color: #121212;
+    --paper-color: #1a1a1a;
+    --crimson: #8b0000;
+    --blood-bright: #d32f2f;
+    --text-primary: #e0e0e0;
+    --text-muted: #888888;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Vazirmatn', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #000000;
+    border-bottom: 2px solid var(--crimson);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+}
+
+header h1 {
+    font-family: 'Cinzel', serif;
+    color: var(--crimson);
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+header p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 5px 0 0 0;
+    font-style: italic;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.btn-mystic {
+    background-color: var(--crimson);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Vazirmatn', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(139, 0, 0, 0.4);
+}
+
+.btn-mystic:hover {
+    background-color: var(--blood-bright);
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.6);
+    transform: translateY(-2px);
+}
+
+nav {
+    margin-top: 15px;
+}
+nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+nav a:hover {
+    color: var(--crimson);
+}
