@@ -225,3 +225,93 @@ nav a:hover {
 
 .status-indicator.safe { color: #81c784; }
 .status-indicator.danger { color: #e57373; }
+
+.form-container {
+    background-color: var(--paper-color);
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    border: 1px solid #222;
+}
+
+.form-container h2 {
+    font-family: 'IM Fell English', serif;
+    font-size: 2rem;
+    color: var(--crimson);
+    margin: 0 0 5px 0;
+}
+
+.form-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #ccc;
+}
+
+.form-input, .form-textarea, .form-select {
+    background-color: #111;
+    border: 1px solid #333;
+    color: var(--text-primary);
+    padding: 12px;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+    outline: none;
+    border-color: var(--crimson);
+    box-shadow: 0 0 5px rgba(139, 0, 0, 0.4);
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.half-width {
+    flex: 1;
+}
+
+.checkbox-group {
+    justify-content: center;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.form-checkbox {
+    accent-color: var(--crimson);
+    transform: scale(1.2);
+}
+
+.help-text {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-top: 4px;
+}
+
+.save-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
