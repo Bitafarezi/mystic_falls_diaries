@@ -79,3 +79,67 @@ nav a {
 nav a:hover {
     color: var(--crimson);
 }
+
+.diary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.diary-header h2 {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.entry-card {
+    background-color: var(--paper-color);
+    border-left: 4px solid var(--crimson);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.entry-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.entry-title-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-family: 'IM Fell English', serif;
+    font-size: 1.6rem;
+    transition: color 0.2s;
+}
+
+.entry-title-link:hover {
+    color: var(--blood-bright);
+}
+
+.entry-snippet {
+    color: #b3b3b3;
+    font-size: 0.95rem;
+}
+
+.entry-meta {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.badge {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.danger-level { background-color: #2a2a2a; color: var(--blood-bright); border: 1px solid var(--crimson); }
+.vervain-locked { background-color: #142914; color: #81c784; }
+.exposed { background-color: #2b1d1d; color: #e57373; }
+.no-entries { text-align: center; padding: 40px; color: var(--text-muted); }
