@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'entries',
+    'supernatural_users',
 ]
 
 MIDDLEWARE = [
