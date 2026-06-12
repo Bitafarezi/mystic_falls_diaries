@@ -143,3 +143,85 @@ nav a:hover {
 .vervain-locked { background-color: #142914; color: #81c784; }
 .exposed { background-color: #2b1d1d; color: #e57373; }
 .no-entries { text-align: center; padding: 40px; color: var(--text-muted); }
+
+.back-navigation {
+    margin-bottom: 20px;
+}
+
+.back-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: var(--crimson);
+}
+
+/* The physical paper-like journal view */
+.journal-page {
+    background-color: #1f1a16; /* Muted deep sepia-tinted charcoal */
+    border: 1px solid #2d251e;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8), 0 10px 25px rgba(0,0,0,0.5);
+    padding: 40px;
+    border-radius: 4px;
+}
+
+.journal-page-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.journal-date {
+    font-family: 'Inter', sans-serif;
+    color: var(--crimson);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.journal-title {
+    font-family: 'IM Fell English', serif;
+    font-size: 2.2rem;
+    margin: 10px 0;
+    color: #f5ebe0; /* Soft warm vintage white */
+}
+
+.journal-author {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.journal-author span {
+    color: var(--text-primary);
+    font-style: normal;
+}
+
+.journal-divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(139, 0, 0, 0), rgba(139, 0, 0, 0.75), rgba(139, 0, 0, 0));
+    margin: 25px 0;
+}
+
+.journal-content {
+    font-family: 'IM Fell English', serif;
+    font-size: 1.25rem;
+    color: #ebdcb9; /* Beautiful old parchment ink color */
+    line-height: 1.8;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.journal-page-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 35px;
+}
+
+.status-indicator.safe { color: #81c784; }
+.status-indicator.danger { color: #e57373; }
